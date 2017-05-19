@@ -6,7 +6,7 @@ public Plugin:myinfo = {
     name = "RoboSapper fun version (2)",
     author = "TehPlayer14",
     description = "Allows to use sapper on robot players",
-    version = "1.3",
+    version = "1.3.01",
     url = "https://github.com/Michal1324"
 };
 
@@ -27,10 +27,10 @@ public OnPluginStart()
 	HookEvent("player_spawn", OnPlayerSpawn, EventHookMode_Post);
 	HookEvent( "player_death", OnPlayerDeath );
 	RegConsoleCmd("sm_robot", Command_rb);
+	ServerCommand("sv_tags robosapper");
 }
 public OnMapStart()
 {
-	ServerCommand("sv_tags ROBOSAPPER");
 //	ServerCommand("sv_tags Robo-Sapper");
 	PrecacheSound(SOUND_SAPPER_REMOVED, true);
 	PrecacheSound(SOUND_SAPPER_NOISE, true);
